@@ -3,7 +3,6 @@ kind: ClusterConfig
 metadata:
   name: KDDKluster
   region: us-east-1
-  versio: 1.17
 managednodeGroups:
   - name: worker-nodes
     instanceType: t3.micro
