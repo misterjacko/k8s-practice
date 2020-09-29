@@ -1,13 +1,13 @@
 apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
+
 metadata:
   name: KDDKluster
   region: us-east-1
-managednodeGroups:
+
+managedNodeGroups:
   - name: worker-nodes
-    instanceType: t3.micro
-    availabilityZones: ["us-east-1a", "us-east-1b", "us-east-1c", "us-east-1d", "us-east-1f"]
-    desiredCapacity: 3
     minSize: 1
     maxSize: 4
-    volumeSize: 20
+    desiredCapacity: 3
+    instanceType: t3.micro
