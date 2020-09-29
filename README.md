@@ -27,6 +27,10 @@ eksctl version
 ### deploy cluster
 .yml file added
 ```
+eksctl create cluster -f create-cluster.yml
+```
+contains:
+```
 eksctl create cluster --name=KDDKluster --version=1.17 zones=us-east-1a,us-east-1b,us-east-1c,us-east-1d,us-east-1f --nodegroup-name=worker-nodes --node-type=t3.micro --nodes=3 --nodes-min=1 --nodes-max=4 --managed
 ```
 ### config cluster
