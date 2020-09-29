@@ -25,8 +25,7 @@ sudo mv /tmp/eksctl /usr/local/bin
 eksctl version
 ```
 ### deploy cluster
-this should be put in its own yaml file
-
+.yml file added
 ```
 eksctl create cluster --name=KDDKluster --version=1.17 zones=us-east-1a,us-east-1b,us-east-1c,us-east-1d,us-east-1f --nodegroup-name=worker-nodes --node-type=t3.micro --nodes=3 --nodes-min=1 --nodes-max=4 --managed
 ```
