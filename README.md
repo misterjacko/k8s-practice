@@ -1,3 +1,15 @@
+## Introduction
+
+These instructions are intended to make it simple to get a kubernetes cluster
+set up using the AWS Elastic Kubernetes Service. Environment set-up instructions
+(ie. updating AWS CLI and installing git etc.) assume you are using a fresh
+Amazon Linux 2 EC2 instance as your deployment environment. 
+
+Once set up, you can follow the instructions to deploy a cluster of nodes on 3
+t3.small instances.  Once the cluster is set up and configured, kubectl apply the
+cloned nginx-deploy.yml file to deploy 10 nginx pods and a load balancer under
+the 'test' namespace.
+
 ### update AWS CLI
 ```
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
