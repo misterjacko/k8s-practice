@@ -29,20 +29,19 @@ eksctl version
 sudo yum install git -y
 ```
 
+### Clone This repo
+```
+git clone https://github.com/misterjacko/k8s-practice.git
+```
+
 ### deploy cluster
-.yml file added
+
 ```
-eksctl create cluster -f create-cluster.yml
-```
-contains:
-```
-eksctl create cluster --name=TestKluster --version=1.16 --zones=us-east-1a,us-east-1b,us-east-1c --nodegroup-name=worker-nodes --node-type=t3.micro --nodes=3 --nodes-min=1 --nodes-max=4 --managed
+eksctl create cluster --name=TestCluster --version=1.16 --zones=us-east-1a,us-east-1b,us-east-1c --nodegroup-name=worker-node --node-type=t3.small --nodes=3 --managed
 ```
 ### config cluster
 ```
-aws sts get-caller-identity
-
-aws eks --region us-east-1 update-kubeconfig --name TestKluster
+aws eks --region us-east-1 update-kubeconfig --name TestCluster
 ```
 
 ### Deployment
