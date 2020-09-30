@@ -6,37 +6,37 @@ metadata:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: la-store
+  name: nginx-hello
   namespace: test
   labels:
-    app: la-store
+    app: nginx-hello
 spec:
-  replicas: 4
+  replicas: 10
   selector:
     matchLabels:
-      app: la-store
+      app: nginx-hello
   template:
     metadata:
       labels:
-        app: la-store
+        app: nginx-hello
     spec:
       containers:
-      - name: la-store
-        image: linuxacademycontent/store-products:1.0.0
+      - name: nginx-hello
+        image: nginxdemos/hello
         ports:
         - containerPort: 80
 ---
 kind: Service
 apiVersion: v1
 metadata:
-  name: la-store-service
+  name: nginx-hello-service
   namespace: test
 spec:
   selector:
-    app: la-store
+    app: nginx-hello
   ports:
   - protocol: TCP
     port: 80
     targetPort: 80
     nodePort: 30080
-  type: NodePort
+  type: LoadBalancer

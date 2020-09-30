@@ -2,12 +2,10 @@ apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 
 metadata:
-  name: KDDKluster
+  name: TestKluster
   region: us-east-1
 
 managedNodeGroups:
   - name: worker-nodes
-    minSize: 1
-    maxSize: 4
     desiredCapacity: 3
-    instanceType: t3.micro
+    instanceType: t3.medium
